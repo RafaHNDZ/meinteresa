@@ -1,0 +1,8 @@
+{
+  "name": "meinteresa",
+  "app_id": "feca405b",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
