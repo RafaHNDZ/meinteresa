@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Juan Lopez</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openPop($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="http://scem-program.user.jacobs-university.de/wp-content/uploads/2014/12/user_male2-256.png">
+          </ion-avatar>
+          <h3>XXX XXX XXXX</h3>
+          <p>Queretaro, Qro</p>
+          <p>30</p>
+        </ion-item>
+        <img src="img/advance-card-bttf.png">
+        <ion-card-content>
+          <rating [(ngModel)]="rate"
+                  readOnly="false"
+                  max="5"
+                  emptyStarIconName="star-outline"
+                  halfStarIconName="star-half"
+                  starIconName="star"
+                  nullable="false"
+                  (ngModelChange)="onModelChange($event)">
+          </rating>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <button ion-button block small color="amber">
+              Llamar
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button block small color="success">
+              Mensaje
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button block small color="secondary">
+              Chat
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

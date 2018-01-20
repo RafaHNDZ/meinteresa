@@ -7,19 +7,38 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { FavoritosPage, BuscarPage, MensajesPage, PublicarPage, PerfilPage } from '../pages/index.pages'
+
+import { PopOptiosPerfil } from '../pages/pop-optios-perfil/pop-optios-perfil';
+
+import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    FavoritosPage,
+    BuscarPage,
+    MensajesPage,
+    PublicarPage,
+    PerfilPage,
+    PopOptiosPerfil
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    FavoritosPage,
+    BuscarPage,
+    MensajesPage,
+    PublicarPage,
+    PerfilPage,
+    PopOptiosPerfil
   ],
   providers: [
     StatusBar,
