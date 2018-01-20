@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { PopOptiosPerfilPage } from './pop-optios-perfil';
+import { PopOptiosPerfil } from './pop-optios-perfil';
 
 @NgModule({
   declarations: [
-    PopOptiosPerfilPage,
+    PopOptiosPerfil,
   ],
   imports: [
-    IonicPageModule.forChild(PopOptiosPerfilPage),
+    IonicPageModule.forChild(PopOptiosPerfil),
   ],
 })
 export class PopOptiosPerfilPageModule {}
