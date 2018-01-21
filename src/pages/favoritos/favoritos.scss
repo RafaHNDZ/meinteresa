@@ -1,3 +1,24 @@
 page-favoritos {
-
+  ion-item.item{
+    height: 130px;
+    padding: 0;
+  }
+  .item-inner{
+    display: block;
+  }
+  ion-thumbnail{
+    width: 130px;
+    height: 100%;
+    padding: 0;
+  }
+  .card-content p{
+    font-size: 1.1rem;
+  }
+  .item img{
+    height: 100%;
+    width: 130px;
+  }
+  .ion-button{
+    font-size: 1.1rem;
+  }
 }

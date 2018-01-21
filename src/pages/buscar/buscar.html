@@ -4,157 +4,170 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content ion-grid>
+<ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-list>
-    <ion-item>
-      <ion-label>Ordenar por</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-list-header>
-      Precio
-    </ion-list-header>
-    <ion-item>
-      <ion-label>Desde</ion-label>
-      <ion-input type="number" placeholder="$1,000.00"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Hasta</ion-label>
-      <ion-input type="number" placeholder="100,000.00"></ion-input>
-    </ion-item>
-    <ion-list-header>
-      Año
-    </ion-list-header>
-    <ion-item>
-      <ion-label>Desde</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Hasta</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-list-header>
-      Kilometros
-    </ion-list-header>
-    <ion-item>
-      <ion-label>Desde</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Hasta</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Marca</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Modelo</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Puertas</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Tipo de auto</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Combustible</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Transmisión</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Ciudad</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label>Ordenar por</ion-label>
+        <ion-select [(ngModel)]="gaming">
+          <ion-option value="nes">NES</ion-option>
+          <ion-option value="n64">Nintendo64</ion-option>
+          <ion-option value="ps">PlayStation</ion-option>
+          <ion-option value="genesis">Sega Genesis</ion-option>
+          <ion-option value="saturn">Sega Saturn</ion-option>
+          <ion-option value="snes">SNES</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-row>
+        <ion-list-header>
+          Precio
+        </ion-list-header>
+        <ion-item ion-col col-12 col-sm-9 col-md-6>
+          <ion-label>Desde</ion-label>
+          <ion-input type="number" placeholder="$1,000.00"></ion-input>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-6>
+          <ion-label>Hasta</ion-label>
+          <ion-input type="number" placeholder="$100,000.00"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-list-header>
+          Año
+        </ion-list-header>
+        <ion-item ion-col col-12 col-sm-9 col-md-6>
+          <ion-label>Desde</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-6>
+          <ion-label>Hasta</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-list-header>
+          Kilometros
+        </ion-list-header>
+        <ion-item ion-col col-12 col-sm-9 col-md-6>
+          <ion-label>Desde</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-6>
+          <ion-label>Hasta</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-list-header>
+          Detalles
+        </ion-list-header>
+        <ion-item ion-col col-12 col-sm-9 col-md-3>
+          <ion-label>Marca</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-3>
+          <ion-label>Modelo</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-3>
+          <ion-label>Puertas</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-3>
+          <ion-label>Tipo de auto</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-4>
+          <ion-label>Combustible</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-4>
+          <ion-label>Transmisión</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item ion-col col-12 col-sm-9 col-md-4>
+          <ion-label>Ciudad</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
 </ion-content>
