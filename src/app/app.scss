@@ -1,7 +1,18 @@
 // http://ionicframework.com/docs/theming/
 
-ion-content{
+.content{
   background-color: #c4c9c9;
+}
+
+.rating{
+  display: table;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.rating li {
+
 }
 
 // App Global Sass

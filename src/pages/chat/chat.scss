@@ -1,0 +1,28 @@
+page-chat {
+  .message_box{
+    display: inline-block;
+  }
+  .message {
+      padding: 10px !important;
+      transition: all 250ms ease-in-out !important;
+      border-radius: 10px !important;
+      margin-bottom: 4px !important;
+      margin: 10px;
+  }
+  .message_row {
+      background-color: #fff;
+  }
+  .my_message {
+    width: 90%;
+    float: right;
+    background: color($colors, primary) !important;
+    color: #000 !important;
+  }
+  .other_message {
+    float: left;
+    width: 90%;
+    background: #dcdcdc !important;
+    color: #000 !important;
+  }
+
+}

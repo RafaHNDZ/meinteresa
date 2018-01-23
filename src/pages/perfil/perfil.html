@@ -9,9 +9,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
-    <ion-row>
+<ion-content ion-grid>
+  <ion-row>
+    <ion-col col-12 col-sm-6 col-md-3>
       <ion-card>
         <ion-item>
           <ion-avatar item-start>
@@ -22,34 +22,88 @@
           <p>30</p>
         </ion-item>
         <ion-card-content>
-          <rating [(ngModel)]="rate"
-                  readOnly="false"
-                  max="5"
-                  emptyStarIconName="star-outline"
-                  halfStarIconName="star-half"
-                  starIconName="star"
-                  nullable="false"
-                  (ngModelChange)="onModelChange($event)">
-          </rating>
+          <ion-row>
+            <ion-col>
+              <button ion-button block small color="amber">
+                Llamar
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button block small color="success">
+                Mensaje
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button block small color="secondary">
+                Chat
+              </button>
+            </ion-col>
+          </ion-row>
         </ion-card-content>
-        <ion-row>
-          <ion-col>
-            <button ion-button block small color="amber">
-              Llamar
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button block small color="success">
-              Mensaje
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button block small color="secondary">
-              Chat
-            </button>
-          </ion-col>
-        </ion-row>
+        <rating [(ngModel)]="rate"
+                readOnly="false"
+                max="5"
+                emptyStarIconName="star-outline"
+                halfStarIconName="star-half"
+                starIconName="star"
+                nullable="false"
+                (ngModelChange)="onModelChange($event)">
+        </rating>
+        <ion-list>
+          <ion-item>
+            Review...
+          </ion-item>
+          <ion-item>
+            Review...
+          </ion-item>
+          <ion-item>
+            Review...
+          </ion-item>
+          <ion-item>
+            Review...
+          </ion-item>
+          <ion-item>
+            Review...
+          </ion-item>
+        </ion-list>
       </ion-card>
-    </ion-row>
-  </ion-grid>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-header text-center>
+          <h2>Anuncios recientes</h2>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-grid>
+            <ion-list no-lines ion-row>
+              <ion-item ion-col col-12 col-md-6>
+                <ion-thumbnail item-start>
+                  <img src="https://auto.ndtvimg.com/car-images/medium/hyundai/verna/hyundai-verna.jpg?v=18">
+                </ion-thumbnail>
+                <h2>My Neighbor Totoro</h2>
+                <p>Hayao Miyazaki • 1988</p>
+                <button ion-button clear item-end>View</button>
+              </ion-item>
+              <ion-item ion-col col-12 col-md-6>
+                <ion-thumbnail item-start>
+                  <img src="https://auto.ndtvimg.com/car-images/medium/hyundai/verna/hyundai-verna.jpg?v=18">
+                </ion-thumbnail>
+                <h2>My Neighbor Totoro</h2>
+                <p>Hayao Miyazaki • 1988</p>
+                <button ion-button clear item-end>View</button>
+              </ion-item>
+              <ion-item ion-col col-12 col-md-6>
+                <ion-thumbnail item-start>
+                  <img src="https://auto.ndtvimg.com/car-images/medium/hyundai/verna/hyundai-verna.jpg?v=18">
+                </ion-thumbnail>
+                <h2>My Neighbor Totoro</h2>
+                <p>Hayao Miyazaki • 1988</p>
+                <button ion-button clear item-end>View</button>
+              </ion-item>
+            </ion-list>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
