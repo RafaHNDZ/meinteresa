@@ -5,11 +5,12 @@ import { Slides } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-registro',
-  templateUrl: 'registro.html',
+  templateUrl: 'registro.html'
 })
 export class RegistroPage {
 
   @ViewChild(Slides) slides: Slides;
+  public filesToUpload: Array<File>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,4 +27,8 @@ export class RegistroPage {
     this.slides.lockSwipes(true);
   }
 
+  onImgSelected(fileInput: any){
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+    console.log(this.filesToUpload);
+  }
 }

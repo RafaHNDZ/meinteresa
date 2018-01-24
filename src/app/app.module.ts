@@ -14,8 +14,6 @@ import { SharePopMenu } from '../pages/popMenu/share-pop-menu/share-pop-menu';
 
 import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
 
-
-
 @NgModule({
   declarations: [
     MyApp,
