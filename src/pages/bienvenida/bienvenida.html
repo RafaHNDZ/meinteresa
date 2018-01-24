@@ -1,0 +1,29 @@
+<ion-content ion-row>
+  <ion-row class="center">
+    <ion-col style="text-align:center;">
+      <img src="" width="150" height="150">
+      <h2>Meinteresa</h2>
+    </ion-col>
+  </ion-row>
+  <ion-row class="center">
+    <ion-col style="text-align:center;">
+      <!--
+      <img src="https://www.qrstuff.com/images/default_qrcode.png" width="160" height="160">
+      -->
+      <button ion-button large round color="cyan">
+        <ion-icon name="qr-scanner"></ion-icon>
+      </button>
+      <p>Escanea tu auto</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="center">
+    <ion-col>
+      <button ion-button (tap)="ingresar()">
+        Ingresar
+      </button>
+      <button ion-button (tap)="registrarse()">
+        Regístrarse
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

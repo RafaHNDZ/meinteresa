@@ -4,3 +4,6 @@ export { MensajesPage } from './mensajes/mensajes';
 export { FavoritosPage } from './favoritos/favoritos';
 export { BuscarPage } from './buscar/buscar';
 export { ChatPage } from "./chat/chat";
+export { BienvenidaPage } from './bienvenida/bienvenida';
+export { LoginPage } from './login/login';
+export { RegistroPage } from './registro/registro';

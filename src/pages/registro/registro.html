@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Meinteresa
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- Correo y Contraseña -->
+  <ion-slides pager>
+    <ion-slide>
+      <ion-row>
+        <ion-col>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-label stacked>Correo electrónico</ion-label>
+            <ion-input type="email" placeholder="ejemplo@mail.com"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Confirmar correo electrónico</ion-label>
+            <ion-input type="email" placeholder="ejemplo@mail.com"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Contraseña</ion-label>
+            <ion-input type="password" placeholder="12345"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Tipo de cuenta</ion-label>
+            <ion-select [(ngModel)]="toppings">
+              <ion-option value="bacon" selected="true">Propietario</ion-option>
+              <ion-option value="olives">Agencia</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="center">
+        <ion-col>
+          <button ion-button block (tap)="next()">
+            Continuar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+      <ion-list no-lines>
+        <ion-item>
+          <ion-label stacked>Nombre completo</ion-label>
+          <ion-input type="text" placeholder="Juan Perez"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Fecha de nacimiento</ion-label>
+          <ion-datetime displayFormat="D/MMMM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Sexo</ion-label>
+          <ion-select [(ngModel)]="gaming">
+            <ion-option value="nes">Hombre</ion-option>
+            <ion-option value="n64">Mujer</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Teléfono</ion-label>
+          <ion-input type="text" placeholder="Juan Perez"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>País</ion-label>
+          <ion-input type="text" placeholder="Juan Perez"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Estado</ion-label>
+          <ion-input type="text" placeholder="Juan Perez"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Ciudad</ion-label>
+          <ion-input type="text" placeholder="Juan Perez"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide style="background-color: red">
+      <h2>Slide 3</h2>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

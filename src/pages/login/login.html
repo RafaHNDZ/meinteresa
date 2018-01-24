@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Meinteresa</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content ion-row>
+  <!--
+  <ion-row class="center">
+    <ion-col style="text-align:center;">
+      <img src="" width="150" height="150">
+      <h2>Meinteresa</h2>
+    </ion-col>
+  </ion-row>
+  -->
+  <ion-row class="center">
+    <ion-col>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label stacked>Correo electrónico</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row class="center">
+    <ion-col>
+      <button ion-button (tap)="login()">
+        Ingresar
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

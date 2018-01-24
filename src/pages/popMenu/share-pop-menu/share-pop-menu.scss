@@ -1,0 +1,34 @@
+page-share-pop-menu {
+  .share_menu{
+    padding: 0;
+  }
+  .share_menu li{
+    display: inline-block;
+    text-align: center;
+    padding: 1px;
+  }
+  .share_button {
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 50%;
+      color: rgb(255, 255, 255);
+  }
+  .share_menu li p{
+    font-size: 1.1rem;
+  }
+  .gallery{
+    background-color: purple;
+  }
+  .camera{
+    background-color: color($colors, cyan);
+  }
+  .location{
+    background-color: color($colors, indigo);
+  }
+  .contact{
+    background-color: indigo;
+  }
+}

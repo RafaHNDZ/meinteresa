@@ -15,6 +15,17 @@
 
 }
 
+.center{
+  display: table;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.popover-ios .popover-content{
+  padding: 5px;
+}
+
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

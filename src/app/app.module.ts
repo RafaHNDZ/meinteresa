@@ -7,9 +7,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import { FavoritosPage, BuscarPage, MensajesPage, PublicarPage, PerfilPage, ChatPage } from '../pages/index.pages'
+import { FavoritosPage, BuscarPage, MensajesPage, PublicarPage, PerfilPage, ChatPage, BienvenidaPage, LoginPage, RegistroPage } from '../pages/index.pages'
 
-import { PopOptiosPerfil } from '../pages/pop-optios-perfil/pop-optios-perfil';
+import { PopOptiosPerfil } from '../pages/popMenu/pop-optios-perfil/pop-optios-perfil';
+import { SharePopMenu } from '../pages/popMenu/share-pop-menu/share-pop-menu';
 
 import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
 
@@ -25,7 +26,11 @@ import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
     PublicarPage,
     PerfilPage,
     ChatPage,
-    PopOptiosPerfil
+    BienvenidaPage,
+    LoginPage,
+    RegistroPage,
+    PopOptiosPerfil,
+    SharePopMenu
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,11 @@ import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
     PublicarPage,
     PerfilPage,
     ChatPage,
-    PopOptiosPerfil
+    BienvenidaPage,
+    LoginPage,
+    RegistroPage,
+    PopOptiosPerfil,
+    SharePopMenu
   ],
   providers: [
     StatusBar,

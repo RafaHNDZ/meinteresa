@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { PopoverController } from 'ionic-angular'; // Controlador para los Pops
 
-import { PopOptiosPerfil } from '../pop-optios-perfil/pop-optios-perfil'; //La pagina de contenido del Pop
+import { PopOptiosPerfil } from '../popMenu/pop-optios-perfil/pop-optios-perfil'; //La pagina de contenido del Pop
 
 @IonicPage()
 @Component({

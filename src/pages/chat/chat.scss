@@ -1,6 +1,7 @@
 page-chat {
   .message_box{
     display: inline-block;
+    width: 100%;
   }
   .message {
       padding: 10px !important;
@@ -13,14 +14,16 @@ page-chat {
       background-color: #fff;
   }
   .my_message {
-    width: 90%;
+    width: 80%;
     float: right;
     background: color($colors, primary) !important;
     color: #000 !important;
+    padding-right: 5px;
+    text-align: right;
   }
   .other_message {
     float: left;
-    width: 90%;
+    width: 80%;
     background: #dcdcdc !important;
     color: #000 !important;
   }
