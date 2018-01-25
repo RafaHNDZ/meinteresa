@@ -7,3 +7,4 @@ export { ChatPage } from "./chat/chat";
 export { BienvenidaPage } from './bienvenida/bienvenida';
 export { LoginPage } from './login/login';
 export { RegistroPage } from './registro/registro';
+export { IntroPage } from './intro/intro';

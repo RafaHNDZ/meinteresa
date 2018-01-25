@@ -7,12 +7,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import { FavoritosPage, BuscarPage, MensajesPage, PublicarPage, PerfilPage, ChatPage, BienvenidaPage, LoginPage, RegistroPage } from '../pages/index.pages'
+import { FavoritosPage, BuscarPage, MensajesPage, PublicarPage, PerfilPage, ChatPage, BienvenidaPage, LoginPage, RegistroPage, IntroPage } from '../pages/index.pages'
 
 import { PopOptiosPerfil } from '../pages/popMenu/pop-optios-perfil/pop-optios-perfil';
 import { SharePopMenu } from '../pages/popMenu/share-pop-menu/share-pop-menu';
 
 import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
+import { IonicStorageModule } from '@ionic/storage';
+
+enableProdMode();
 
 @NgModule({
   declarations: [
@@ -27,12 +30,14 @@ import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
     BienvenidaPage,
     LoginPage,
     RegistroPage,
+    IntroPage,
     PopOptiosPerfil,
     SharePopMenu
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
@@ -48,6 +53,7 @@ import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
     BienvenidaPage,
     LoginPage,
     RegistroPage,
+    IntroPage,
     PopOptiosPerfil,
     SharePopMenu
   ],
