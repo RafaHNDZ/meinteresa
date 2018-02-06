@@ -5,10 +5,12 @@
       <button ion-button icon-only>
         <ion-icon name="call"></ion-icon>
       </button>
+      <!--
       <button ion-button icon-only (tap)="shareMenu($event)">
         <ion-icon name="attach"></ion-icon>
       </button>
-      <button ion-button icon-only>
+      -->
+      <button ion-button icon-only (tap)="chatOptions($event)">
         <ion-icon name="more"></ion-icon>
       </button>
     </ion-buttons>
@@ -33,8 +35,8 @@
       <ion-input placeholder="Escribe un mensaje"></ion-input>
     </ion-item>
     <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="camera"></ion-icon>
+      <button ion-button icon-only (tap)="presentActionSheet()">
+        <ion-icon name="attach"></ion-icon>
       </button>
       <button ion-button icon-only>
         <ion-icon name="send"></ion-icon>

@@ -6,13 +6,31 @@
 
 <ion-content>
  <ion-list>
-   <ion-item (tap)="gotToChat()">
-     <ion-avatar item-start>
-       <img src="http://scem-program.user.jacobs-university.de/wp-content/uploads/2014/12/user_male2-256.png">
-     </ion-avatar>
-     <h2>Juan</h2>
-     <p>This town ain't big enough for the two of us!</p>
+   <ion-item-sliding>
+      <ion-item (tap)="gotToChat()">
+        <ion-avatar item-start>
+          <img src="http://scem-program.user.jacobs-university.de/wp-content/uploads/2014/12/user_male2-256.png">
+        </ion-avatar>
+        <h2>Juan</h2>
+        <p>This town ain't big enough for the two of us!</p>
+      </ion-item>
      <ion-note item-end>3:43 pm</ion-note>
-   </ion-item>
+     <ion-item-options side="left">
+       <button ion-button color="primary">
+         <ion-icon name="text"></ion-icon>
+         Text
+       </button>
+       <button ion-button color="secondary">
+         <ion-icon name="call"></ion-icon>
+         Call
+       </button>
+     </ion-item-options>
+     <ion-item-options side="right">
+       <button ion-button color="primary">
+         <ion-icon name="mail"></ion-icon>
+         Email
+       </button>
+     </ion-item-options>
+   </ion-item-sliding>
  </ion-list>
 </ion-content>

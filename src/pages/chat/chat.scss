@@ -28,4 +28,18 @@ page-chat {
     color: #000 !important;
   }
 
+  .item{
+    background-color: #fff0;
+    padding-left: 0;
+  }
+
+  .input-has-focus .item-inner{
+    border-bottom-color: none;
+    box-shadow: none;
+  }
+
+  .item-md.item-block .item-inner{
+    border-bottom: none;
+  }
+
 }

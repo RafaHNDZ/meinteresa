@@ -3,9 +3,12 @@ import { ErrorHandler, NgModule, enableProdMode } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
+import { RegistroProvider } from '../providers/providers.index';
 
 import { FavoritosPage, BuscarPage, MensajesPage, PublicarPage, PerfilPage, ChatPage, BienvenidaPage, LoginPage, RegistroPage, IntroPage } from '../pages/index.pages'
 
@@ -14,6 +17,8 @@ import { SharePopMenu } from '../pages/popMenu/share-pop-menu/share-pop-menu';
 
 import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
 import { IonicStorageModule } from '@ionic/storage';
+import { FileProvider } from '../providers/file/file';
+import { UsuarioProvider } from '../providers/usuario/usuario';
 
 enableProdMode();
 
@@ -38,7 +43,8 @@ enableProdMode();
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    Ionic2RatingModule
+    Ionic2RatingModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,7 +66,10 @@ enableProdMode();
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RegistroProvider,
+    FileProvider,
+    UsuarioProvider
   ]
 })
 export class AppModule {}

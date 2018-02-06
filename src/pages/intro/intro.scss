@@ -1,39 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 page-intro {
-  .toolbar-background {
-    background: #fff;
-    border-color: transparent;
+
+  .diag {
+    position: absolute;
+    z-index: 1;
+    width:100%;
+    top: 0;
+    height:66%;
   }
 
-  ion-slides{
-    background-color: rgb(255, 255, 255);
+  ion-icon {
+      margin-top: 25%;
+      font-size:7em;
   }
 
-  .slide-zoom {
-    height: auto;
-  }
-
-  .slide-title {
-    margin-top: 2.8rem;
-  }
-
-  .slide-image {
-    max-height: 50%;
-    max-width: 60%;
-    margin: 18px 0;
-  }
-
-  b {
-    font-weight: 500;
+  h2 {
+      margin-top:80% !important;
+      font-weight:bold;
+      font-size:1em;
   }
 
   p {
-    padding: 0 40px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #60646B;
+      width:80%;
+      display:block;
+      margin: 0 auto;
+      font-size:.9em;
+  }
 
-    b {
-      color: #000000;
-    }
+  .swiper-pagination-bullet-active {
+      background: color($colors, primary);
+  }
+
+  .swiper-pagination {
+      bottom: 12% !important;
+  }
+
+  #skip {
+      position:absolute;
+      bottom: 20px;
+      width:100%;
+      background:none !important;
+      text-align:center;
+      cursor:pointer;
+      z-index:5;
   }
 }

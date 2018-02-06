@@ -25,6 +25,9 @@ export class MyApp {
       storage.ready().then(() => {
         this.initApp().then(() => {
           statusBar.styleDefault();
+          setTimeout(()=>{
+            splashScreen.hide();
+          }, 3500);
           console.log("Storage loaded!");
         });
       }).catch(() => {

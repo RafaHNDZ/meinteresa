@@ -1,93 +1,161 @@
-
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
-      Meinteresa
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-buttons start id="btn_next">
+      <button ion-button clear icon-only (tap)="back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+       <ion-title>Registro</ion-title>
+    <ion-buttons end  [hidden]="slides.isEnd()" id="btn_back">
+      <button ion-button clear icon-only (tap)="next()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content ion-grid>
+<ion-content scroll="false">
   <ion-slides pager>
-    <!-- Correo y Contraseña -->
     <ion-slide>
-      <ion-row>
-        <ion-item ion-col col-12 col-md-4>
-          <ion-label stacked>Correo electrónico</ion-label>
-          <ion-input type="email" placeholder="ejemplo@mail.com"></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12 col-md-4>
-          <ion-label stacked>Confirmar correo electrónico</ion-label>
-          <ion-input type="email" placeholder="ejemplo@mail.com"></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12 col-md-4>
-          <ion-label stacked>Contraseña</ion-label>
-          <ion-input type="password" placeholder="12345"></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12 col-md-6>
-          <ion-label>Tipo de cuenta</ion-label>
-          <ion-select [(ngModel)]="toppings">
-            <ion-option value="bacon" selected="true">Propietario</ion-option>
-            <ion-option value="olives">Agencia</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-row>
-      <ion-row class="center">
-        <ion-col>
-          <button ion-button roud (tap)="next()">
-            Continuar
-          </button>
-        </ion-col>
-      </ion-row>
+      <ion-list no-lines>
+        <form [formGroup]="formUser">
+          <!--
+          <ion-item>
+            <div class="center">
+              <img [src]="avatarPreview" style="width:100px; height:100px;">
+              <span ion-button block class="btn-file">
+                  Avatar <input (change)="onImgSelected($event)" id="avatar" name="avatar" type="file" accept="image/x-png,image/gif,image/jpeg">
+              </span>
+            </div>
+          </ion-item>
+          -->
+          <ion-item>
+            <ion-label floating>Nombre completo</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('name').errors" class="help-form">
+            <p *ngIf="formUser.get('name').hasError('required')">Requerido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Correo electrónico</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('email').errors" class="help-form">
+            <p *ngIf="formUser.get('email').hasError('required')">Requerido</p>
+            <p *ngIf="formUser.get('email').hasError('pattern')">Correo invalido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('password').errors" class="help-form">
+            <p *ngIf="formUser.get('password').hasError('required')">Requerido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label>Tipo de cuenta</ion-label>
+            <ion-select formControlName="type">
+              <ion-option value="propietario" selected="true">Propietario</ion-option>
+              <ion-option value="agencia">Agencia</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('type').errors" class="help-form">
+            <p *ngIf="formUser.get('type').hasError('required')">Requerido</p>
+          </ion-item>
+        </form>
+      </ion-list>
     </ion-slide>
-
     <ion-slide>
-      <ion-row>
-        <ion-item ion-col col-12>
-          <div class="center">
-            <img src="assets/imgs/default_avatar.png" style="width:100px; height:100px;">
-            <span ion-button block class="btn-file">
-                Avatar <input (change)="onImgSelected($event)" type="file" accept="image/x-png,image/gif,image/jpeg">
-            </span>
+      <ion-list no-lines>
+        <form [formGroup]="formUser">
+          <ion-item>
+            <ion-label floating>Fecha de nacimiento</ion-label>
+            <ion-datetime displayFormat="D/MMMM/YYYY" formControlName="dob" (ionChange)="dateChange($event)"></ion-datetime>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('dob').errors" class="help-form">
+            <p *ngIf="formUser.get('dob').hasError('required')">Requerido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label>Sexo</ion-label>
+            <ion-select formControlName="gener">
+              <ion-option value="M">Hombre</ion-option>
+              <ion-option value="F">Mujer</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('gener').errors" class="help-form">
+            <p *ngIf="formUser.get('gener').hasError('required')">Requerido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Teléfono</ion-label>
+            <ion-input type="tel" placeholder="123-4567-8901" formControlName="mobilePhone"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('mobilePhone').errors" class="help-form">
+            <p *ngIf="formUser.get('mobilePhone').hasError('required')">Requerido</p>
+            <p *ngIf="formUser.get('mobilePhone').hasError('pattern')">Formato no valido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label>Pais</ion-label>
+            <ion-select formControlName="pais" (ionChange)="getEstados($event)">
+              <ion-option value="1">México</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('pais').errors" class="help-form">
+            <p *ngIf="formUser.get('pais').hasError('required')">Requerido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label>Estado</ion-label>
+            <ion-select formControlName="estado" [disabled]="!estados" (ionChange)="getCiudades($event)">
+              <ion-option [value]="estado.estado_id" *ngFor="let estado of estados">{{estado.nombre}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('estado').errors" class="help-form">
+            <p *ngIf="formUser.get('estado').hasError('required')">Requerido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label>Ciudad</ion-label>
+            <ion-select formControlName="ciudad" [disabled]="!ciudades">
+              <ion-option [value]="ciudad.municipio_id" *ngFor="let ciudad of ciudades">{{ciudad.nombre}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="formUser.get('ciudad').errors" class="help-form">
+            <p *ngIf="formUser.get('ciudad').hasError('required')">Requerido</p>
+          </ion-item>
+        </form>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <div class="center">
+        <div [hidden]="success">
+          <div [hidden]="formUser.valid" id="dialog">
+            <!-- Errores en el formulario -->
+            <ion-icon name="warning" color="danger"></ion-icon>
+            <h2 class="slide-title">Oops!</h2>
+            <p>Parece que algunos datos no estan bien...</p>
           </div>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <ion-label stacked>Nombre completo</ion-label>
-          <ion-input type="text" placeholder="Juan Perez"></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <ion-label stacked>Fecha de nacimiento</ion-label>
-          <ion-datetime displayFormat="D/MMMM/YYYY" [(ngModel)]="myDate"></ion-datetime>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <ion-label>Sexo</ion-label>
-          <ion-select [(ngModel)]="gaming">
-            <ion-option value="nes">Hombre</ion-option>
-            <ion-option value="n64">Mujer</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <ion-label stacked>Teléfono</ion-label>
-          <ion-input type="tel" placeholder="(+00) 123-4567-8901" pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}'></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <ion-label stacked>País</ion-label>
-          <ion-input type="text" placeholder="Juan Perez"></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <ion-label stacked>Estado</ion-label>
-          <ion-input type="text" placeholder="Juan Perez"></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <ion-label stacked>Ciudad</ion-label>
-          <ion-input type="text" placeholder="Juan Perez"></ion-input>
-        </ion-item>
-        <ion-item ion-col col-12>
-          <button ion-button block>
-            Continuar
+          <div [hidden]="!formUser.valid">
+            <!-- Formulario correcto -->
+            <ion-icon name="thumbs-up" color="primary"></ion-icon>
+            <h2 class="slide-title">Adelante!</h2>
+          </div>
+        </div>
+        <div [hidden]="!success">
+          <!-- Formulario correcto -->
+          <ion-icon name="checkmark" color="success"></ion-icon>
+          <h2 class="slide-title">Todo listo</h2>
+          <p>Ahora puedes acceder con tu cuenta</p>
+          <button ion-button clear (tap)="navCtrl.pop()">
+            Salir
           </button>
-        </ion-item>
-      </ion-row>
+        </div>
+      </div>
     </ion-slide>
   </ion-slides>
 </ion-content>
+<ion-footer [hidden]="!slides.isEnd()" id="footer">
+  <ion-row>
+    <ion-col>
+      <button ion-button block (tap)="onSubmit()" [disabled]="!formUser.valid">
+        Enviar
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
