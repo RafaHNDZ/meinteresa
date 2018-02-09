@@ -83,17 +83,7 @@ export class RegistroPage {
   }
 
   dateChange(e){
-    var dob= new Date(e);
-    var fechaActual = new Date()
-    var mes = fechaActual.getMonth();
-    var dia = fechaActual.getDay();
-    var ano = fechaActual.getFullYear();
-
-    fechaActual.setDate(dia);
-    fechaActual.setMonth(mes);
-    fechaActual.setFullYear(ano);
-
-    //var edad = Math.floor(((fechaActual - dob) / (1000 * 60 * 60 * 24) / 365));
+    
   }
 
   onImgSelected(fileInput: any){

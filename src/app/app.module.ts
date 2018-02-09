@@ -19,6 +19,8 @@ import { Ionic2RatingModule } from 'ionic2-rating'; //Sistema de Rating
 import { IonicStorageModule } from '@ionic/storage';
 import { FileProvider } from '../providers/file/file';
 import { UsuarioProvider } from '../providers/usuario/usuario';
+import { StorageProvider } from '../providers/storage/storage';
+import { SecureStorage } from '@ionic-native/secure-storage';
 
 enableProdMode();
 
@@ -69,7 +71,9 @@ enableProdMode();
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RegistroProvider,
     FileProvider,
-    UsuarioProvider
+    UsuarioProvider,
+    StorageProvider,
+    SecureStorage
   ]
 })
 export class AppModule {}
