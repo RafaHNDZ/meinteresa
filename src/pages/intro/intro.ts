@@ -11,6 +11,7 @@ import { BienvenidaPage } from '../bienvenida/bienvenida';
 })
 export class IntroPage {
 
+  splash = true;
   skipMsg: string = "Saltar";
   @ViewChild(Slides) slides: Slides;
 
@@ -24,6 +25,7 @@ export class IntroPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IntroPage');
+    setTimeout(()=> this.splash = false, 4000);
   }
 
   slideChanged() {

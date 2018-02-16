@@ -4,6 +4,239 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <!--
+  <ion-slides>
+    <ion-slide>
+      <ion-segment [(ngModel)]="payMethod">
+        <ion-segment-button value="one">
+          Opcion 1
+        </ion-segment-button>
+        <ion-segment-button value="card">
+          Crédito y Débito
+        </ion-segment-button>
+        <ion-segment-button value="oxxo">
+          OXXOPay
+        </ion-segment-button>
+      </ion-segment>
 
+      <div [ngSwitch]="payMethod">
+        <div *ngSwitchCase="'one'">
+
+          <div class="form">
+            <ion-item>
+              <ion-label floating>Username</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+          </div>
+        </div>
+        <div *ngSwitchCase="'card'">
+
+          <p>Crédito</p>
+          <ion-row>
+            <div class="center">
+              <div class="cc-selector">
+                <input id="visa" type="radio" name="card" value="visa" />
+                <label class="drinkcard-cc visa" for="visa"></label>
+                <input id="mastercard" type="radio" name="card" value="mastercard" />
+                <label class="drinkcard-cc mastercard"for="mastercard"></label>
+              </div>
+            </div>
+          </ion-row>
+          <p>Débito</p>
+          <ion-row class="cc-selector">
+            <ion-row class="center">
+              <ion-col>
+                <input type="radio" id="banamex" name="card" value="banamex">
+                <label for="banamex" class="drinkcard-cc banamex"></label>
+              </ion-col>
+              <ion-col>
+                <input type="radio" id="banbajio" name="card" value="banbajio">
+                <label for="banbajio" class="drinkcard-cc banbajio"></label>
+              </ion-col>
+              <ion-col>
+                <input type="radio" id="bancomer" name="card" value="bancomer">
+                <label for="bancomer" class="drinkcard-cc bancomer"></label>
+              </ion-col>
+            </ion-row>
+            <ion-row class="center">
+              <ion-col>
+                <input type="radio" id="banorte" name="card" value="banorte">
+                <label for="banorte" class="drinkcard-cc banorte"></label>
+              </ion-col>
+              <ion-col>
+                <input type="radio" id="scotiabank" name="card" value="scotiabank">
+                <label for="scotiabank" class="drinkcard-cc scotiabank"></label>
+              </ion-col>
+              <ion-col>
+                <input type="radio" id="santander" name="card" value="santander">
+                <label for="santander" class="drinkcard-cc santander"></label>
+              </ion-col>
+            </ion-row>
+          </ion-row>
+          <ion-row>
+            <div class="form">
+              <ion-item>
+                <ion-label>Número de tarjeta</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item >
+                <ion-label floating>Fecha de validez</ion-label>
+                <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+              </ion-item>
+              <ion-item>
+                <ion-label>Código</ion-label>
+                <ion-input type="password"></ion-input>
+              </ion-item>
+            </div>
+          </ion-row>
+        </div>
+        <div *ngSwitchCase="'oxxo'">
+
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+    </ion-slide>
+  </ion-slides>
+  -->
+  <!-- Formulario de Publicacion -->
+<form [formGroup]="postForm">
+  <ion-row>
+    <ion-item ion-col col-12 col-sm-6 col-md-4>
+      <ion-label floating>Fabricante</ion-label>
+      <ion-select formControlName="fabricante" (ionChange)="getModelos($event)">
+        <ion-option *ngFor="let fabricante of fabricantes" [value]="fabricante.fabricante_id">{{fabricante.nombre}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-6 col-md-4>
+      <ion-label floating>Modelo</ion-label>
+      <ion-select formControlName="modelo" [disabled]="!modelos">
+        <ion-option *ngFor="let modelo of modelos" [value]="modelo.modelo_id">{{modelo.nombre}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-6 col-md-4>
+      <ion-label floating>Versión</ion-label>
+      <ion-datetime pickerFormat="YYYY" formControlName="version"></ion-datetime>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-6 col-md-6>
+      <ion-label floating>Estado de conservación</ion-label>
+      <ion-select formControlName="conservacion">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-12 col-md-6>
+      <ion-label floating>Motor</ion-label>
+      <ion-select formControlName="motor">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-item ion-col col-12 col-sm-6 col-md-4>
+      <ion-label floating>Kilometraje</ion-label>
+      <ion-input type="text" formControlName="kilometraje"></ion-input>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-6 col-md-4>
+      <ion-label floating>Combustible</ion-label>
+      <ion-select formControlName="combustible">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-6 col-md-4>
+      <ion-label floating>Transmisión</ion-label>
+      <ion-select formControlName="transmision">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-6 col-md-6>
+      <ion-label floating>Puertas</ion-label>
+      <ion-select formControlName="puertas">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-12 col-md-6>
+      <ion-label floating>Asientos</ion-label>
+      <ion-select formControlName="asientos">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <div id="gallery" class="gallery" [hidden]="!filesToUpload"></div>
+  </ion-row>
+  <ion-item>
+    <!--
+    <img [src]="preview" style="width:100px; height:100px;" *ngFor="let file of filesToUpload">
+    -->
+    <div>
+      <span ion-button block clear class="btn-file">
+          Imagenes <input (change)="onImgSelected($event)" id="portada" name="portada" type="file" accept="image/x-png,image/gif,image/jpeg" multiple>
+      </span>
+    </div>
+  </ion-item>
+  <ion-row>
+    <ion-item ion-col col-12 col-sm-6 col-md-6>
+      <ion-label floating>Estado</ion-label>
+      <ion-select formControlName="estado">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item ion-col col-12 col-sm-6 col-md-6>
+      <ion-label floating>Ciudad</ion-label>
+      <ion-select formControlName="ciudad">
+        <ion-option>Bacon</ion-option>
+        <ion-option>Black Olives</ion-option>
+        <ion-option>Extra Cheese</ion-option>
+        <ion-option>Mushrooms</ion-option>
+        <ion-option>Pepperoni</ion-option>
+        <ion-option>Sausage</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <button ion-button block round [disabled]="!postForm.valid" (tap)="onSumbit()">
+        Continuar
+      </button>
+    </ion-item>
+  </ion-row>
+</form>
 </ion-content>

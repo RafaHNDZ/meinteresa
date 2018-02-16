@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SplashPage } from '../pages/splash/splash';
 
 import { RegistroProvider } from '../providers/providers.index';
 
@@ -39,7 +40,8 @@ enableProdMode();
     RegistroPage,
     IntroPage,
     PopOptiosPerfil,
-    SharePopMenu
+    SharePopMenu,
+    SplashPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ enableProdMode();
     RegistroPage,
     IntroPage,
     PopOptiosPerfil,
-    SharePopMenu
+    SharePopMenu,
+    SplashPage
   ],
   providers: [
     StatusBar,

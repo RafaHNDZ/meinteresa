@@ -1,3 +1,102 @@
 page-publicar {
 
+  .gallery{
+    padding: 10px;
+    margin: 0 auto;
+    margin-top:0px;
+    margin-bottom:0px;
+    text-align:center;
+  }
+
+  .preview{
+    margin: 2px;
+    width: 120px;
+    height: 80px;
+  }
+
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+    }
+  .btn-file input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      outline: none;
+      background: white;
+      cursor: inherit;
+      display: block;
+  }
+
+  .form{
+    width: 100%;
+  }
+  ion-slides{
+    height: auto;
+  }
+  .cc-selector input{
+      margin:0;padding:0;
+      -webkit-appearance:none;
+         -moz-appearance:none;
+              appearance:none;
+  }
+  .visa{
+    background-image:url(http://i.imgur.com/lXzJ1eB.png);
+  }
+  .mastercard{
+    background-image:url(http://i.imgur.com/SJbRQF7.png);
+  }
+  .banamex{
+    background-image: url(http://www.forumbuenavista.mx/images/default-source/default-album/banamex-logo.jpg?sfvrsn=512a72b3_2);
+  }
+  .banbajio{
+    background-image: url(http://redmedical.mx/evo-design/uploads/2015/06/ban-bajio.jpg);
+  }
+  .bancomer{
+    background-image: url(http://logo-logos.com/wp-content/uploads/2016/10/BBVA_Bancomer_logo.png);
+  }
+  .banorte{
+    background-image: url(https://static.interjet.com/assets/images/landings/Logo_Banorte.png);
+  }
+  .scotiabank{
+    background-image: url(https://ijglobal.com/image/serveimage/2301?h=661&mw=3701);
+  }
+  .santander{
+    background-image: url(http://diylogodesigns.com/blog/wp-content/uploads/2016/07/Santander-logo-png-download.png);
+  }
+  .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+  .cc-selector input:checked +.drinkcard-cc{
+      -webkit-filter: none;
+         -moz-filter: none;
+              filter: none;
+  }
+  .drinkcard-cc{
+      cursor:pointer;
+      background-size:contain;
+      background-repeat:no-repeat;
+      display:inline-block;
+      width:80px;height:50px;
+      -webkit-transition: all 100ms ease-in;
+         -moz-transition: all 100ms ease-in;
+              transition: all 100ms ease-in;
+      -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+         -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+              filter: brightness(1.8) grayscale(1) opacity(.7);
+  }
+  .drinkcard-cc:hover{
+      -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+         -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+              filter: brightness(1.2) grayscale(.5) opacity(.9);
+  }
+
+  /* Extras */
+  a:visited{color:#888}
+  a{color:#444;text-decoration:none;}
+  p{margin-bottom:.3em;}
 }

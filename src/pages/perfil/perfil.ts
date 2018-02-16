@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-import { StorageProvider } from '../../providers/storage/storage';
 import { PopoverController } from 'ionic-angular'; // Controlador para los Pops
 import { UsuarioProvider } from '../../providers/usuario/usuario';
 
@@ -20,7 +19,6 @@ export class PerfilPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public popCtrl: PopoverController,
-    private platform: Platform,
     private usuario: UsuarioProvider
   ) {
     this.user = '';
@@ -52,7 +50,7 @@ export class PerfilPage {
   onModelChange(event){
     console.log(event);
   }
-  //Lanza el Pop 
+  //Lanza el Pop
   openPop(event){
     //Crea una instancia de tipo popMenu usando una pagina diseñada especificamente para eso
       let popMenu = this.popCtrl.create(PopOptiosPerfil);

@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { BASE_URL } from '../../config/webservice.config';
 import { LoadingController, AlertController, ToastController, Platform } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { SecureStorage, SecureStorageObject } from '@ionic-native/secure-storage';
-import { Header } from 'ionic-angular/components/toolbar/toolbar-header';
 
 @Injectable()
 export class UsuarioProvider {
@@ -19,7 +17,6 @@ export class UsuarioProvider {
     public alertCtrl: AlertController,
     public toastCtrl: ToastController,
     private storage: Storage,
-    private secureStorage: SecureStorage,
     private platform: Platform
   ) {
     console.log('User Provider Loaded!');
@@ -62,13 +59,19 @@ export class UsuarioProvider {
           //Se reciben los datos del usuario en la petición
           this.token = response['token'];
           this.user_id = response['user_id'];
-          this.save_session();
-          this.load_user_data(this.user);
-          //Se resuelve la promesa y se envia un true ya que se completo con exito
-          resolve(true);
+          this.load_user_data(this.user_id).then((user:any) => {
+            if(user){
+              this.user = user;
+              this.save_session();
+              //Se resuelve la promesa y se envia un true ya que se completo con exito
+              resolve(true);
+            }
+          });
         }
       }, (error) => {
         //Metodo error, se ejecuta cuando se reibne algun codigo de error del servidor
+        loader.dismiss();
+        this.toast('Error en el servidor');
         reject();
       }, () => {
         //Complete, se ejecuta al final de la petición
@@ -83,20 +86,19 @@ export class UsuarioProvider {
   save_session(){
     if(this.platform.is("cordova")){
       this.storage.ready().then(()=>{
-        this.storage.set('token', this.token).then(() => {
-          console.log('Token guardado');
-        });
-        this.storage.set('user_id', this.user_id).then(() => {
-          console.log('UserID guardado');
-        });
+        this.storage.set('token', this.token);
+        this.storage.set('user_id', this.user_id);
+        this.storage.set('user', this.user);
       });
     }else{
       if(this.token){
         localStorage.setItem('token', this.token);
         localStorage.setItem('user_id', this.user_id);
+        localStorage.setItem('user', JSON.stringify(this.user));
       }else{
         localStorage.removeItem('user_id');
         localStorage.removeItem('token');
+        localStorage.removeItem('user');
       }
     }
   }
@@ -108,40 +110,30 @@ export class UsuarioProvider {
         this.storage.get('token').then((token) => {
           if(token){
             this.token = token;
-            console.log('Token: ' + token);
           }
         });
         this.storage.get("user_id").then((user_id) => {
           if(user_id){
+            console.log('Native user id: ' + this.user_id);
             this.user_id = user_id;
-            console.log('User ID: ' + user_id);
           }
         });
-      }).catch(() => {
-        this.toastCtrl.create({
-          message: 'Error al cargar la sesion',
-          closeButtonText: "Ok",
-          showCloseButton: true
-        }).present();
+        this.storage.get('user').then((user) => {
+          if(user){
+            this.user = user;
+          }
+        });
       });
     }else{
       if(localStorage.getItem("token")){
        this.token = localStorage.getItem('token');
        this.user_id = localStorage.getItem('user_id');
+       this.user = JSON.parse(localStorage.getItem('user'));
       }
-    }
-    if(this.user_id){
-      this.load_user_data(this.user_id).then((user: any) => {
-        if(user){
-          this.user = user;
-        }
-      }).catch(() => {
-        this.toast('Error al cargar datos del usuario');
-      });
     }
   }
 
-  load_user_data(user: string){
+  load_user_data(user){
     console.log("Cargando datos del usuario...");
     let promesa = new Promise((resolve, reject) => {
       let url = BASE_URL + 'User/user/' + user;

@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BASE_URL } from '../../config/webservice.config';
-import { FileProvider } from '../file/file';
 import { LoadingController, AlertController } from 'ionic-angular';
 
 @Injectable()
@@ -13,7 +12,6 @@ export class RegistroProvider {
     public http: HttpClient,
     public loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
-    private fileService: FileProvider
   ) {
     console.log('Hello RegistroProvider Provider');
   }
@@ -60,6 +58,54 @@ export class RegistroProvider {
         loader.dismiss();
       }, () => {
         console.log('HTTP Request complete!');
+        loader.dismiss();
+      });
+    });
+    return promesa;
+  }
+
+  getFabricantes(){
+    let loader = this.loadingCtrl.create({
+      content: 'Cargando fabricantes'
+    });
+    loader.present();
+    let promesa = new Promise((resolve, reject) => {
+      let url = BASE_URL + 'Fabricante';
+      this.http.get(url).subscribe((response) => {
+        if(response['error']){
+          reject(response['message']);
+        }else{
+          resolve(response['fabricantes']);
+        }
+      }, (error) => {
+        loader.dismiss();
+        reject();
+      }, () => {
+        loader.dismiss();
+      });
+    });
+    return promesa;
+  }
+
+  getModelos(fabricante){
+    let loader = this.loadingCtrl.create({
+      content: 'Cargando modelos'
+    });
+    loader.present();
+    let promesa = new Promise((resolve, reject) => {
+      let url = BASE_URL + 'Modelo/' + fabricante;
+      this.http.get(url).subscribe((response) => {
+        if(response['error']){
+          this.showAlert(response['message']);
+          reject();
+        }else{
+          resolve(response['modelos']);
+        }
+      }, (error) => {
+        loader.dismiss();
+        this.showAlert('Error en el servidor');
+        reject();
+      }, () => {
         loader.dismiss();
       });
     });

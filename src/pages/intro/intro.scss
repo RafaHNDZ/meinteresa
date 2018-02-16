@@ -1,47 +1,71 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 page-intro {
 
-  .diag {
-    position: absolute;
-    z-index: 1;
-    width:100%;
-    top: 0;
-    height:66%;
+  ion-icon{
+    font-size: 15rem;
   }
-
-  ion-icon {
-      margin-top: 25%;
-      font-size:7em;
-  }
-
-  h2 {
-      margin-top:80% !important;
-      font-weight:bold;
-      font-size:1em;
-  }
-
+  
   p {
-      width:80%;
-      display:block;
-      margin: 0 auto;
-      font-size:.9em;
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #60646B;
+
+    b {
+      color: #000000;
+    }
   }
 
   .swiper-pagination-bullet-active {
       background: color($colors, primary);
   }
 
-  .swiper-pagination {
-      bottom: 12% !important;
-  }
-
   #skip {
       position:absolute;
-      bottom: 20px;
+      bottom: 7%;
       width:100%;
       background:none !important;
       text-align:center;
       cursor:pointer;
       z-index:5;
   }
+
+  #custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    width:100%;
+    background-color: #002a3e;
+  }
+
+  .flb {
+    background-color: #3ebffb;
+    height:100%;
+    width:100%;
+    animation: pulse 1s linear forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Aligner-item {
+    max-width: 50%;
+  }
+  .Aligner-item--top {
+    align-self: flex-start;
+  }
+  .Aligner-item--bottom {
+    align-self: flex-end;
+  }
+  #custom-overlay img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    animation: animation 3100ms linear infinite both;
+    animation-delay: 1s;
+  }
+
 }

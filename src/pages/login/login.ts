@@ -30,7 +30,7 @@ export class LoginPage {
   onLogin(){
     this._usuario.login(this.loginForm.value).then((loged:boolean) => {
       if(loged){
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(HomePage,{showSplash:false});
       }
     }).catch(() => {
 
